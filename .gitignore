@@ -7,7 +7,6 @@ _site
 *.zip
 !template.zip
 
+node_modules
 node_modules/*
-!node_modules/grunt-module-transfer
-!node_modules/grunt-qiwoobuild
 

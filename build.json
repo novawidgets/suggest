@@ -1,18 +1,18 @@
 {
     "suggest": {
-        "version": "1.0.0",
+        "version": "1.0.1",
         "files" : {
-            "build/suggest.js" : [
+            "build/suggest.1.0.1.js" : [
                 "src/suggest.js"
             ],
-            "build/suggest.css" : [
+            "build/suggest.1.0.1.css" : [
                 "src/suggest.css"
             ]
         },
         "module": "Nova.suggest",
         "src": "src/suggest.js",
         "requires": {
-            "widget": "widget/1.0.0/widget"
+            "widget": "module/widget/1.0.2/widget"
         }
     }
 }
