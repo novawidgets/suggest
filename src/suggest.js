@@ -70,7 +70,8 @@
             this.cache = {};         
 
             // 替换template中的{$className}占位符
-            var template = this.get('template').replace(/{\$([^\})]*)}/g, function() {
+            var template = this.get('template');
+            typeof template == 'string' && template.replace(/{\$([^\})]*)}/g, function() {
                 return me.get(arguments[1]);
             });
 
@@ -85,7 +86,8 @@
             this.$list.html('');
             this.$form = this.get('formId') ? $('#' + this.get('formId')) : this.$element.closest('form');
             var parentNode = this.get('parentNode') ? $(this.get('parentNode')) : this.$form;
-            parentNode.append(this.$suggest);
+            var suggest = this.$suggest[0];
+            !suggest.ownerDocument.contains(suggest) && parentNode.append(this.$suggest);
             this.$suggest.hide();
 
             // 设置自定义方法
