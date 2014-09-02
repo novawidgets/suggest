@@ -1,11 +1,11 @@
 {
     "suggest": {
-        "version": "1.0.1",
+        "version": "1.0.2",
         "files" : {
-            "build/suggest.1.0.1.js" : [
+            "build/suggest.1.0.2.js" : [
                 "src/suggest.js"
             ],
-            "build/suggest.1.0.1.css" : [
+            "build/suggest.1.0.2.css" : [
                 "src/suggest.css"
             ]
         },
