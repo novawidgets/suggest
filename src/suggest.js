@@ -71,9 +71,9 @@
 
             // 替换template中的{$className}占位符
             var template = this.get('template');
-            typeof template == 'string' && template.replace(/{\$([^\})]*)}/g, function() {
+            typeof template == 'string' && (template = template.replace(/{\$([^\})]*)}/g, function() {
                 return me.get(arguments[1]);
-            });
+            }));
 
             // 生成Suggest DOM元素
             this.$suggest = $(template);
