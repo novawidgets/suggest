@@ -87,7 +87,7 @@
             this.$form = this.get('formId') ? $('#' + this.get('formId')) : this.$element.closest('form');
             var parentNode = this.get('parentNode') ? $(this.get('parentNode')) : this.$form;
             var suggest = this.$suggest[0];
-            !suggest.ownerDocument.contains(suggest) && parentNode.append(this.$suggest);
+            !suggest.ownerDocument.body.contains(suggest) && parentNode.append(this.$suggest);
             this.$suggest.hide();
 
             // 设置自定义方法
