@@ -1,10 +1,10 @@
 (function(root, factory) {
 if(typeof exports === 'object') {
-module.exports = factory();
+module.exports = factory.apply(root);
 } else if(typeof define === 'function' && define.amd) {
-define(['module/widget/1.0.2/widget'], factory);
+define(['module/widget/1.0.2/widget'], function() {return factory.apply(root, arguments)});
 } else {
-root['Suggest'] = factory();
+root['Suggest'] = factory.apply(root);
 }
 })(this, function(Widget) {
 Widget = Widget || this.Widget;
@@ -98,7 +98,7 @@ Widget = Widget || this.Widget;
             this.$form = this.get('formId') ? $('#' + this.get('formId')) : this.$element.closest('form');
             var parentNode = this.get('parentNode') ? $(this.get('parentNode')) : this.$form;
             var suggest = this.$suggest[0];
-            !suggest.ownerDocument.contains(suggest) && parentNode.append(this.$suggest);
+            !suggest.ownerDocument.body.contains(suggest) && parentNode.append(this.$suggest);
             this.$suggest.hide();
 
             // 设置自定义方法
